@@ -1,7 +1,24 @@
-const timesFIFA = ["Barcelona", "Real Madrid", "Manchester City", "Manchester United",
-"Borussia Dortmund"];
+const apiUrl = 'https://futdb.app/api/v1/teams';
+const timesFIFA = [];
 
-function sortearTime() {
+async function obterTimesAPI() {
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        return data.teams.map(time => time.name);
+    } catch (erro) {
+        console.error('Erro ao obter times da API.', erro);
+        return [];
+    }
+}
+
+async function sortearTime() {
+
+    if (timesFIFA.length === 0) {
+        timesFIFA.push(...await obterTimesAPI());
+        console.log('Times FIFA 22 carregados: ', timesFIFA)
+    }
+
     let indiceSorteado1 = Math.floor(Math.random() * timesFIFA.length);
     let indiceSorteado2;
 
@@ -15,3 +32,5 @@ function sortearTime() {
     const result = document.getElementById("timeSorteado");
     result.innerHTML = `Times Sorteados: ${timeSorteado1} vs ${timeSorteado2}`;
 }
+
+obterTimesAPI();
