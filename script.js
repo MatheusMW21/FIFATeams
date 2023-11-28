@@ -55,8 +55,8 @@ async function sortearTimes() {
 
     const result = document.getElementById("timeSorteados");
     result.innerHTML = `Times Sorteados: ${timeSorteado1.name} vs ${timeSorteado2.name}`;
-
-    /*const imagensTimesDiv = document.getElementById("imagensTimes");
+/*
+    const imagensTimesDiv = document.getElementById("imagensTimes");
     imagensTimesDiv.innerHTML = '';
 
     const imagemTime1 = document.createElement("img");
@@ -71,5 +71,5 @@ async function sortearTimes() {
 
     imagensTimesDiv.appendChild(imagemTime1);
     imagensTimesDiv.appendChild(imagemTime2);
-    */
+*/    
 }
