@@ -1,13 +1,25 @@
-const apiUrl = 'https://futdb.app/api/v1/teams';
+const apiUrl = 'https://futdb.app/api/teams';
 const timesFIFA = [];
 
 async function obterTimesAPI() {
     try {
         const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            console.error('Erro ao obter times da API:', response.statusText);
+            return [];
+        }
+
         const data = await response.json();
+
+        if (!data || !data.teams || !Array.isArray(data.teams)) {
+            console.error('Formato de dados da API inválido:', data);
+            return [];
+        }
+
         return data.teams.map(time => time.name);
     } catch (erro) {
-        console.error('Erro ao obter times da API.', erro);
+        console.error('Erro ao obter times da API:', erro.message);
         return [];
     }
 }
