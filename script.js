@@ -1,6 +1,6 @@
 const apiUrl = 'https://futdb.app/api/clubs';
-const apiKey = '6b2be443-b8d5-4ad1-9259-3581246f31fc';
-const timesFIFA = [];
+const apiKey = '6b2be443-b8d5-4ad1-9259-3581246f31fc'; 
+let timesFIFA = [];
 
 async function obterTimesAPI() {
     try {
@@ -30,10 +30,15 @@ async function obterTimesAPI() {
     }
 }
 
-async function sortearTime() {
+async function mostrarClubes() {
+    timesFIFA = await obterTimesAPI();
+    console.log('Times FIFA carregados:', timesFIFA);
+}
+
+function sortearTimes() {
     if (timesFIFA.length === 0) {
-        timesFIFA.push(...await obterTimesAPI());
-        console.log('Times FIFA carregados:', timesFIFA);
+        console.error('A lista de clubes está vazia. Carregue os clubes antes de sortear.');
+        return;
     }
 
     let indiceSorteado1 = Math.floor(Math.random() * timesFIFA.length);
@@ -46,8 +51,8 @@ async function sortearTime() {
     const timeSorteado1 = timesFIFA[indiceSorteado1];
     const timeSorteado2 = timesFIFA[indiceSorteado2];
 
-    const result = document.getElementById("timeSorteado");
+    const result = document.getElementById("timeSorteados");
     result.innerHTML = `Times Sorteados: ${timeSorteado1} vs ${timeSorteado2}`;
-}
 
-obterTimesAPI();
+    return timesFIFA;
+}
