@@ -17,14 +17,17 @@ async function obterTimesAPI() {
         }
 
         const data = await response.json();
-        console.log('Dados da API:', data);
 
-        if (!data || !data.items || !Array.isArray(data.items)) {
+        if (!data.items || !Array.isArray(data.items)) {
             console.error('Formato de dados da API inválido:', data);
             return [];
         }
 
-        return data.items.map(clube => clube.name);
+        return data.items.map(clube => ({
+            name: clube.name,
+            id: clube.id,
+            image: `https://futdb.app/api/clubs/${clube.id}/image`,
+        }));
     } catch (erro) {
         console.error('Erro ao obter times da API:', erro.message);
         return [];
@@ -51,5 +54,22 @@ async function sortearTimes() {
     const timeSorteado2 = timesFIFA[indiceSorteado2];
 
     const result = document.getElementById("timeSorteados");
-    result.innerHTML = `Times Sorteados: ${timeSorteado1} vs ${timeSorteado2}`;
+    result.innerHTML = `Times Sorteados: ${timeSorteado1.name} vs ${timeSorteado2.name}`;
+
+    /*const imagensTimesDiv = document.getElementById("imagensTimes");
+    imagensTimesDiv.innerHTML = '';
+
+    const imagemTime1 = document.createElement("img");
+    imagemTime1.src = timeSorteado1.image;
+    imagemTime1.classList.add('img-time');
+    imagemTime1.crossOrigin = "anonymous";
+
+    const imagemTime2 = document.createElement("img");
+    imagemTime2.src = timeSorteado2.image;
+    imagemTime2.classList.add('img-time');
+    imagemTime2.crossOrigin = "anonymous";   
+
+    imagensTimesDiv.appendChild(imagemTime1);
+    imagensTimesDiv.appendChild(imagemTime2);
+    */
 }

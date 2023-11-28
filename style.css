@@ -11,3 +11,8 @@ body {
 #app {
     text-align: center;
 }
+
+.img-time {
+    width: 100px; 
+    margin-right: 10px; 
+}
