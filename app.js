@@ -18,10 +18,30 @@ const db = new sqlite3.Database(dbName);
 db.serialize(() => {
     db.run(`CREATE TABLE ${tableName} (id INT, name TEXT, image TEXT, overall INT)`);
     const timesEx = [
-        {id: 1, name: 'Real Madrid', image: 'https://logodetimes.com/wp-content/uploads/real-madrid.png',
-    overall: 84},
-        {id: 2, name: 'Barcelona', image: 'https://logodetimes.com/wp-content/uploads/barcelona.png',
-    overall: 83}
+        {   
+            id: 1,
+            name: 'Real Madrid', 
+            image: 'https://logodetimes.com/wp-content/uploads/real-madrid.png',
+            overall: 84
+        },
+        {   
+            id: 2, 
+            name: 'Barcelona', 
+            image: 'https://logodetimes.com/wp-content/uploads/barcelona.png',
+            overall: 83
+        },
+        {
+            id: 3,
+            name: 'Manchester City',
+            image: '',
+            overall: 84
+        },
+        {
+            id: 4,
+            name: 'Borussia Dortmund',
+            image: '',
+            overall: 80
+        }
     ];
     const stmt = db.prepare('INSERT INTO times VALUES (?, ?, ?, ?)');
     timesEx.forEach(time => stmt.run(time.id, time.name, time.image, time.overall));
