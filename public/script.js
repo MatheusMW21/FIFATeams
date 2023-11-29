@@ -3,13 +3,15 @@ const apiUrl = 'http://localhost:3000/api/times';
 let timesFIFA = [];
 
 async function obterTimesAPI() {
+    return await obterTimesDoBanco();
+    /*
     try {
         
         const response = await fetch(apiUrl);
         const data = await response.json();
         return data.map(time => ({ name: time.name, image: time.image, overall: time.overall}));
 
-        /*
+        
         const response = await fetch(apiUrl, {
             headers: {
                 'accept': 'application/json',
@@ -34,11 +36,12 @@ async function obterTimesAPI() {
             id: clube.id,
             image: `https://futdb.app/api/clubs/${clube.id}/image`,
         }));
-        */
+        
     } catch (erro) {
         console.error('Erro ao obter times da API:', erro.message);
         return [];
     }
+    */
 }
 
 async function sortearTimes() {
@@ -55,7 +58,7 @@ async function sortearTimes() {
 
     do {
         indiceSorteado2 = Math.floor(Math.random() * timesFIFA.length);
-    } while (indiceSorteado2 === indiceSorteado1);
+    } while (indiceSorteado2 === indiceSorteado1 || Math.abs(timesFIFA[indiceSorteado1].overall - timesFIFA[indiceSorteado2].overall) > 3);
 
     const timeSorteado1 = timesFIFA[indiceSorteado1];
     const timeSorteado2 = timesFIFA[indiceSorteado2];
