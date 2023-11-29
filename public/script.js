@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:5500/api/times';
+const apiUrl = 'http://localhost:3000/api/times';
 //const apiKey = '6b2be443-b8d5-4ad1-9259-3581246f31fc';
 let timesFIFA = [];
 
