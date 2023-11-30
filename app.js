@@ -1,17 +1,27 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const sql = require('mssql');
+const sql = require('mssql/msnodesqlv8')
+require('dotenv').config();
 
 const config = {
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    server: process.env.DB_SERVER,
-    database: process.env.DB_DATABASE,
+    user: 'sa',
+    password: '951237468',
+    server: 'MATHEUS',
+    database: 'FifaTeams',
+    driver: 'msnodesqlv8',
     options: {
-        encrypt: true,
-    }
+        trustedConnection: true,
+        useUTC: false,
+        enableArithAbort: true,
+        options: {
+            trustedConnection: true,
+            dsn: 'MySqlServerDSN', // Use o nome da sua fonte de dados aqui
+        },
+    },
 };
+
+
 
 const app = express();
 const port = 3000;
