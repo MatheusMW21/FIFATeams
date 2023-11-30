@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 const apiUrl = 'http://localhost:3000/api/times';
 const SorteadorTimes = () => {
-  const [timesFIFA, setTimesFIFA] = useState([]);
+  const [timesFIFA, setTimesFIFA] = useState([
+    {id: 1, name: 'Barcelona', overall: 84},
+    {id: 2, name: 'Real Madrid', overall: 85},
+    {id: 3, name: 'Manchester City', overall: 85},
+    {id: 4, name: 'Liverpool', overall: 85}
+  ]);
   const [sorteados, setSorteados] = useState('');
 
   useEffect(() => {
@@ -19,6 +24,8 @@ const SorteadorTimes = () => {
   };
 
   const sortearTimes = () => {
+    console.log('Função sortearTimes foi chamada.'); // Adicionado log aqui
+
     if (timesFIFA.length === 0) {
       console.error('A lista de clubes está vazia. Carregue os clubes antes de sortear.');
       return;
@@ -37,6 +44,8 @@ const SorteadorTimes = () => {
     const timeSorteado1 = timesFIFA[indiceSorteado1];
     const timeSorteado2 = timesFIFA[indiceSorteado2];
 
+    console.log('Times Sorteados:', timeSorteado1, timeSorteado2);
+
     setSorteados(`Times Sorteados: ${timeSorteado1.name} vs ${timeSorteado2.name}`);
   };
 
@@ -44,7 +53,6 @@ const SorteadorTimes = () => {
     <div>
       <button onClick={sortearTimes}>Sortear Times</button>
       <div id="timeSorteados">{sorteados}</div>
-      {}
     </div>
   );
 };
