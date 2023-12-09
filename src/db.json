@@ -1,9 +1,125 @@
 {
     "timesFIFA": [
-      { "id": 1, "name": "Barcelona", "overall": 84 },
-      { "id": 2, "name": "Real Madrid", "overall": 85 },
-      { "id": 3, "name": "Manchester City", "overall": 85 },
-      { "id": 4, "name": "Liverpool", "overall": 85 }
+      {
+        "id": 1,
+        "name": "Arsenal",
+        "overall": 78
+      },
+      {
+        "id": 2,
+        "name": "Aston Villa",
+        "overall": 76
+      },
+      {
+        "id": 3,
+        "name": "Blackburn Rovers",
+        "overall": 75
+      },
+      {
+        "id": 4,
+        "name": "Bolton",
+        "overall": 69
+      },
+      {
+        "id": 5,
+        "name": "Chelsea",
+        "overall": 84
+      },
+      {
+        "id": 7,
+        "name": "Everton",
+        "overall": 78
+      },
+      {
+        "id": 8,
+        "name": "Leeds United",
+        "overall": 75
+      },
+      {
+        "id": 9,
+        "name": "Liverpool",
+        "overall": 78
+      },
+      {
+        "id": 10,
+        "name": "Manchester City",
+        "overall": 78
+      },
+      {
+        "id": 11,
+        "name": "Manchester Utd",
+        "overall": 78
+      },
+      {
+        "id": 12,
+        "name": "Middlesbrough",
+        "overall": 75
+      },
+      {
+        "id": 13,
+        "name": "Newcastle Utd",
+        "overall": 78
+      },
+      {
+        "id": 14,
+        "name": "Nott'm Forest",
+        "overall": 78
+      },
+      {
+        "id": 15,
+        "name": "QPR",
+        "overall": 75
+      },
+      {
+        "id": 17,
+        "name": "Southampton",
+        "overall": 75
+      },
+      {
+        "id": 18,
+        "name": "Spurs",
+        "overall": 78
+      },
+      {
+        "id": 19,
+        "name": "West Ham",
+        "overall": 78
+      },
+      {
+        "id": 21,
+        "name": "FC Bayern München",
+        "overall": 84
+      },
+      {
+        "id": 22,
+        "name": "Borussia Dortmund",
+        "overall": 83
+      },
+      {
+        "id": 23,
+        "name": "M'gladbach",
+        "overall": 83
+      },
+      {
+        "id": 24,
+        "name": "Real Madrid",
+        "overall": 84
+      },
+      {
+        "id": 25,
+        "name": "Real Madrid",
+        "overall": 84
+      },
+      {
+        "id": 26,
+        "name": "Barcelona",
+        "overall": 83
+      },
+      {
+        "id": 27,
+        "name": "Atlético de Madrid",
+        "overall": 82
+      }
     ]
   }
   
