@@ -1,4 +1,5 @@
 import React from 'react';
+import SorteadorTimes from './SorteadorTimes';
 
 const App = () => {
   const appStyle = {
@@ -24,10 +25,6 @@ const App = () => {
     marginTop: '20px',
   };
 
-  const buttonHoverStyle = {
-    backgroundColor: '#45a049',
-  };
-
   const timeSorteadosStyle = {
     marginTop: '20px',
     fontSize: '18px',
@@ -47,15 +44,11 @@ const App = () => {
     borderRadius: '50%',
     objectFit: 'cover',
   };
-
+  
   return (
     <div style={appStyle}>
       <h1 style={h1Style}>FIFA 22 - Sorteio de Times</h1>
-      <button style={buttonStyle} onMouseOver={() => {}} onMouseOut={() => {}}>
-        Sortear Times
-      </button>
-      <div id="timeSorteados" style={timeSorteadosStyle}></div>
-      <div id="imagensTimes" style={imagensTimesStyle}></div>
+      <SorteadorTimes />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-//const apiUrl = 'http://localhost:3000/api/times';
 const SorteadorTimes = () => {
   const [timesFIFA, setTimesFIFA] = useState([
     {id: 1, name: 'Barcelona', overall: 84},
