@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
+const apiUrl = 'http://localhost:3001/timesFIFA';
+
 const SorteadorTimes = () => {
-  const [timesFIFA, setTimesFIFA] = useState([
-    {id: 1, name: 'Barcelona', overall: 84},
-    {id: 2, name: 'Real Madrid', overall: 85},
-    {id: 3, name: 'Manchester City', overall: 85},
-    {id: 4, name: 'Liverpool', overall: 85}
-  ]);
+  const [timesFIFA, setTimesFIFA] = useState([]);
   const [sorteados, setSorteados] = useState('');
 
   useEffect(() => {
@@ -23,8 +20,8 @@ const SorteadorTimes = () => {
   };
 
   const sortearTimes = () => {
-    console.log('Função sortearTimes foi chamada.'); // Adicionado log aqui
-
+    console.log('Função sortearTimes foi chamada.');
+    
     if (timesFIFA.length === 0) {
       console.error('A lista de clubes está vazia. Carregue os clubes antes de sortear.');
       return;
@@ -50,7 +47,9 @@ const SorteadorTimes = () => {
 
   return (
     <div>
-      <button onClick={sortearTimes}>Sortear Times</button>
+      <button onClick={sortearTimes} disabled={timesFIFA.length === 0}>
+        Sortear Times
+      </button>
       <div id="timeSorteados">{sorteados}</div>
     </div>
   );

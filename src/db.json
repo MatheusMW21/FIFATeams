@@ -1,0 +1,9 @@
+{
+    "timesFIFA": [
+      { "id": 1, "name": "Barcelona", "overall": 84 },
+      { "id": 2, "name": "Real Madrid", "overall": 85 },
+      { "id": 3, "name": "Manchester City", "overall": 85 },
+      { "id": 4, "name": "Liverpool", "overall": 85 }
+    ]
+  }
+  
